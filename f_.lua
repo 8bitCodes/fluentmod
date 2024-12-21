@@ -10,16 +10,16 @@ local welcomeLabel = Instance.new("TextLabel")
 welcomeLabel.Parent = statGui
 welcomeLabel.Text = "Welcome, " .. player.Name
 welcomeLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-welcomeLabel.Font = Enum.Font.Gotham
-welcomeLabel.TextSize = 40
+welcomeLabel.Font = Enum.Font.GothamBold  -- Bold/fat font
+welcomeLabel.TextSize = 60  -- Increased font size
 welcomeLabel.Size = UDim2.new(0, 300, 0, 50)  -- Adjusted width for better fit
-welcomeLabel.Position = UDim2.new(0.5, -150, 1, -75)  -- Positioned at bottom center
+welcomeLabel.Position = UDim2.new(0.5, 0, 1, -75)  -- Centered horizontally and positioned more to the bottom
 welcomeLabel.AnchorPoint = Vector2.new(0.5, 1)  -- Anchor point adjusted for bottom alignment
 welcomeLabel.BackgroundTransparency = 1
 
--- Set text outline (stroke)
-welcomeLabel.TextStrokeTransparency = 0.5  -- Outline transparency
-welcomeLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 255)  -- Blue outline color
+-- Set text outline (black stroke)
+welcomeLabel.TextStrokeTransparency = 0.3  -- Black outline transparency
+welcomeLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)  -- Black outline color
 
 getgenv().welcomeText = welcomeLabel.Text
 
