@@ -27,13 +27,21 @@ getgenv().welcomeText = welcomeLabel.Text
 getgenv().fadeText = function(newText)
     getgenv().welcomeText = newText
 
+    -- Fade out and move up
     local fadeOutTweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-    local fadeOutGoal = {TextTransparency = 1}
+    local fadeOutGoal = {
+        TextTransparency = 1,
+        Position = welcomeLabel.Position - UDim2.new(0, 0, 0.1, 0) -- Move upward by 10% of the screen height
+    }
     local fadeOutTween = TweenService:Create(welcomeLabel, fadeOutTweenInfo, fadeOutGoal)
     fadeOutTween:Play()
     fadeOutTween.Completed:Wait()
 
+    -- Reset position and update text
+    welcomeLabel.Position = UDim2.new(0.5, 0, 1, -75)  -- Reset position
     welcomeLabel.Text = newText
+
+    -- Fade in
     local fadeInTweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
     local fadeInGoal = {TextTransparency = 0}
     local fadeInTween = TweenService:Create(welcomeLabel, fadeInTweenInfo, fadeInGoal)
